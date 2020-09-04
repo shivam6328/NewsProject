@@ -1,6 +1,6 @@
 # NewsProject
 
-##Steps to run this file:
+## Steps to run this file:
 
 1. It's prefered to use a Linux distro (for obvious reasons).
 2. Install python3 (Will have to setup the path and environment variables in Windows)
@@ -18,4 +18,4 @@ pip3 install tensorflow
 5. Go to the project directory
 6. Run using python3 News_Categorization.py
 
-#THANK YOU
+## THANK YOU
