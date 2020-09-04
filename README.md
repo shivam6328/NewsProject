@@ -7,12 +7,12 @@
 
 3. Run the following commands on the terminal:
 
-pip3 install numpy
-pip3 install pandas
-pip3 install sklearn
-pip3 install matplotlib
-pip3 install keras
-pip3 install tensorflow
+3.1 pip3 install numpy
+3.2 pip3 install pandas
+3.3 pip3 install sklearn
+3.4 pip3 install matplotlib
+3.5 pip3 install keras
+3.6 pip3 install tensorflow
 
 4. Clone the project using git clone https://github.com/shivam6328/NewsProject.git
 5. Go to the project directory
