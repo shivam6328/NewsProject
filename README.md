@@ -17,5 +17,5 @@
 4. Clone the project using git clone https://github.com/shivam6328/NewsProject.git
 5. Go to the project directory
 6. Run using python3 News_Categorization.py
-
+7. Feel free to create a seperate branch and tweak the model to obtain better accuracy.
 ## THANK YOU
