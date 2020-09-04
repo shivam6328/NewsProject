@@ -25,8 +25,10 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import confusion_matrix
 from sklearn.model_selection import StratifiedShuffleSplit
 
+import pickle
 
-filename = "News_Category_Dataset_v2.json"
+
+filename = "../News_Category_Dataset_v2.json"
 df = pd.read_json(filename,lines=True)
 df.head()
 
@@ -72,7 +74,7 @@ word_index = tokenizer.word_index
 EMBEDDING_DIM = 100
 
 embeddings_index = {}
-f = open('glove.6B.100d.txt',encoding="utf8")
+f = open('../glove.6B.100d.txt',encoding="utf8")
 for line in f:
     values = line.split()
     word = values[0]
@@ -155,37 +157,13 @@ textcnn_history = TextCNN.fit(x_train,
                               validation_data=(x_val, y_val))
 
 
-headline=df.headline[0:50]
-
-headline=pd.Series(headline)
-print (headline)
-tokenizer = Tokenizer()
-tokenizer.fit_on_texts(headline)
-p = tokenizer.texts_to_sequences(headline)
-p=pd.Series(p)
-print (type(p))
-
-maxlen = 50
-p = list(sequence.pad_sequences(p, maxlen=maxlen))
-p=np.array(p)
 
 
 
-predictions2= TextCNN.predict(p, 
-                            batch_size=1024, 
-                            verbose=1)
 
 
-y=0
-count=0
-for tester in predictions2:
-    #for i in range(len(tester)):
-        #print (int_category[i],"-->",tester[i])
-    print (headline[y],"-->",int_category[np.argmax(tester)],"-->",df.category[y])
-    if int_category[np.argmax(tester)]==df.category[y]:
-        print ("field is ",df.category[y])
-        count+=1
-        
-    y=y+1
-    
-print ("total correct predictions: ",count)
+filename = 'TextCnn_model.sav'
+#pickle.dump(textcnn_history , open(filename, 'wb'))
+TextCNN.save('my_model_1.h5')
+#textcnn_history.save('my_model.h5')
+
