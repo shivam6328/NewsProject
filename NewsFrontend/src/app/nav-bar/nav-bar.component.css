@@ -1,0 +1,48 @@
+#navbar{
+    border: 2px solid black; 
+    height:70px;
+    padding:10px;
+    display: inline-flexbox;
+}
+
+
+
+
+/* Basic styling */
+* {
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+body {
+    font-family: sans-serif;
+    font-size: 20px;
+}
+nav {
+    background: #222;
+    padding: 10px 25px;
+    text-align: center;
+}
+a {
+    color: white;
+    text-decoration: none;
+}
+
+.item {
+    padding: 12px;
+}
+
+.item:not(.button) a:hover,
+.item a:hover::after {
+    color: black;
+    background-color: azure;
+    padding: 14px;
+    font-size:large;
+}
+ul{
+    display: inline;
+}
+li{
+    display: inline;
+    
+}

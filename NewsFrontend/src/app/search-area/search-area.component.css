@@ -1,0 +1,21 @@
+#search{
+    padding: 5px;
+    text-align: center;
+    /*border: 2px solid black; */
+    height:800px;
+    font-size: xxx-large;
+}
+
+#inp{
+    border: 2px solid black;
+    padding: 15px;
+    height: 500px;
+    width: 1200px;
+}
+button{
+    font-size: large;
+}
+button:hover{
+    background-color: black;
+    color: white;
+}

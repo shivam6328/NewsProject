@@ -1,14 +1,16 @@
 import numpy as np
 import pandas as pd
+import keras
 from keras.models import load_model
 from keras.preprocessing.text import Tokenizer
 from keras.preprocessing import sequence
+from keras.models import load_model
 
-filename = "../News_Category_Dataset_v2.json"
+filename = "News_Category_Dataset_v2.json"
 df = pd.read_json(filename,lines=True)
 
-TextCNN=load_model('my_model_1.h5')
-
+#TextCNN=load_model('my_model_1.h5')
+LSTM=load_model('my_model_1.h5')
 headline=df.headline[0:50]
 
 headline=pd.Series(headline)
@@ -32,7 +34,7 @@ for i, k in enumerate(categories):
 
 
 
-predictions2= TextCNN.predict(p, 
+predictions2= LSTM.predict(p, 
                             batch_size=1024, 
                             verbose=1)
 
@@ -50,3 +52,5 @@ for tester in predictions2:
     y=y+1
     
 print ("total correct predictions: ",count)
+
+

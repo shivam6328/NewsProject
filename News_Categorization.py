@@ -26,9 +26,9 @@ from sklearn.metrics import confusion_matrix
 from sklearn.model_selection import StratifiedShuffleSplit
 
 import pickle
+import tensorflow as tf
 
-
-filename = "../News_Category_Dataset_v2.json"
+filename = "News_Category_Dataset_v2.json"
 df = pd.read_json(filename,lines=True)
 df.head()
 
@@ -74,7 +74,7 @@ word_index = tokenizer.word_index
 EMBEDDING_DIM = 100
 
 embeddings_index = {}
-f = open('../glove.6B.100d.txt',encoding="utf8")
+f = open('glove.6B.100d.txt',encoding="utf8")
 for line in f:
     values = line.split()
     word = values[0]
@@ -164,6 +164,6 @@ textcnn_history = TextCNN.fit(x_train,
 
 filename = 'TextCnn_model.sav'
 #pickle.dump(textcnn_history , open(filename, 'wb'))
-TextCNN.save('my_model_1.h5')
+#TextCNN.save('my_model_1.h5')
 #textcnn_history.save('my_model.h5')
-
+tf.keras.experimental.export_saved_model(TextCNN, 'my_model_1.h5')

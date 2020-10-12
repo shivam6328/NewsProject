@@ -1,0 +1,12 @@
+#header{
+    /*border: 2px solid black; */
+    height:70px;
+    /*background-color: rgb(100, 218, 218);*/
+}
+.flex-container{
+    background-color: rgb(128, 226, 169);
+    padding: 10px;
+}
+#name{
+    font-size: xx-large;
+}

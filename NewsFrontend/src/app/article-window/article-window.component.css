@@ -1,0 +1,18 @@
+div{
+    width:83%;
+    height:600px;
+    position: relative;
+    top:45px;
+    left:280px;
+    border: 2px solid black;
+    overflow-y: auto;
+}
+p{
+    font-size: xx-large;
+    text-align: center;
+}
+
+iframe{
+    height:600px;
+    width:1400px;
+}
